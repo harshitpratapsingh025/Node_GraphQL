@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
       type: String,
     },
     country: {
-      type: Number,
+      type: String,
     },
     state: {
       type: mongoose.Schema.Types.ObjectId,
