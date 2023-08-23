@@ -5,6 +5,7 @@ import cors from 'cors';
 import { graphqlHTTP } from 'express-graphql';
 import connectDB from './api/config/db.mjs';
 import schema from './api/graphql/schema/schema.mjs';
+import resolvers from './api/graphql/resolvers/userResolvers.mjs';
 
 dotenv.config();
 const app = express();
@@ -20,6 +21,7 @@ app.use(
   graphqlHTTP({
     schema,
     graphiql: process.env.NODE_ENV === 'development',
+    rootValue: resolvers,
   }),
 );
 
