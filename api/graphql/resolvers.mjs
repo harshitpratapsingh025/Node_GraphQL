@@ -1,11 +1,31 @@
 import User from '../models/User.mjs';
+import Vendor from '../models/Vendor.mjs';
+import City from '../models/City.mjs';
+import State from '../models/State.mjs';
+import ProductCategory from '../models/ProductCategory.mjs';
 import bcrypt from 'bcryptjs';
+
 const root = {
   user: (args) => {
     return User.findById(args.id);
   },
   users: () => {
     return User.find();
+  },
+  vendor: (args) => {
+    return Vendor.findById(args.id);
+  },
+  vendors: () => {
+    return Vendor.find();
+  },
+  cityByState: (args) => {
+    return City.find({ state: args.stateId });
+  },
+  allState: () => {
+    return State.find();
+  },
+  productCategories: () => {
+    return ProductCategory.find();
   },
   addUser: async (args) => {
     const hash = await bcrypt.hash(args.password, 10);

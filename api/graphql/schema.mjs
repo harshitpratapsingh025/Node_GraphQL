@@ -1,5 +1,9 @@
 import { GraphQLObjectType, GraphQLID, GraphQLSchema, GraphQLList, GraphQLNonNull, GraphQLString } from 'graphql';
 import UserType from './types/userType.mjs';
+import VendorType from './types/vendorType.mjs';
+import City from './types/cityType.mjs';
+import State from './types/stateType.mjs';
+import ProductCategoryType from './types/ProductCategory.mjs';
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
@@ -10,6 +14,23 @@ const RootQuery = new GraphQLObjectType({
     },
     users: {
       type: new GraphQLList(UserType),
+    },
+    vendor: {
+      type: VendorType,
+      args: { id: { type: GraphQLID } },
+    },
+    vendors: {
+      type: new GraphQLList(VendorType),
+    },
+    cityByState: {
+      type: new GraphQLList(City),
+      args: { stateId: { type: GraphQLID } },
+    },
+    allState: {
+      type: new GraphQLList(State),
+    },
+    productCategories: {
+      type: new GraphQLList(ProductCategoryType),
     },
   }),
 });

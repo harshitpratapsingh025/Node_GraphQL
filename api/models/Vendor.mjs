@@ -18,9 +18,6 @@ const VendorSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    emergency_contact: {
-      type: String,
-    },
     description: {
       type: String,
     },
