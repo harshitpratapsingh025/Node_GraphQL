@@ -4,8 +4,8 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { graphqlHTTP } from 'express-graphql';
 import connectDB from './api/config/db.mjs';
-import schema from './api/graphql/schema/schema.mjs';
-import resolvers from './api/graphql/resolvers/userResolvers.mjs';
+import schema from './api/graphql/schema.mjs';
+import resolvers from './api/graphql/resolvers.mjs';
 
 dotenv.config();
 const app = express();

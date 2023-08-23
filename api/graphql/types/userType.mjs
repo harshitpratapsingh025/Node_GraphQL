@@ -20,13 +20,13 @@ const UserType = new GraphQLObjectType({
     isDeleted: { type: GraphQLInt },
     city: {
       type: CityType,
-      resolve: (parent, args) => {
+      resolve: (parent) => {
         return City.findById(parent.city);
       },
     },
     state: {
       type: StateType,
-      resolve: (parent, args) => {
+      resolve: (parent) => {
         return State.findById(parent.state);
       },
     },
