@@ -34,7 +34,6 @@ const root = {
       lastname: args.lastName,
       email: args.email,
       password: hash,
-      email: args.email,
       country: args.country,
       state: args.state,
       city: args.city,

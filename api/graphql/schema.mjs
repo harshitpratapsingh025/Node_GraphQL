@@ -45,7 +45,7 @@ const mutation = new GraphQLObjectType({
         lastName: { type: GraphQLNonNull(GraphQLString) },
         email: { type: GraphQLNonNull(GraphQLString) },
         password: { type: GraphQLNonNull(GraphQLString) },
-        adress: { type: GraphQLNonNull(GraphQLString) },
+        address: { type: GraphQLNonNull(GraphQLString) },
         pincode: { type: GraphQLNonNull(GraphQLString) },
         contact: { type: GraphQLNonNull(GraphQLString) },
         country: { type: GraphQLNonNull(GraphQLString) },
